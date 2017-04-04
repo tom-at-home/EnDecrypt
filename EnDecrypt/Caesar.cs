@@ -9,37 +9,33 @@ namespace EnDecrypt
     class Caesar : ICrypt
     {
         private string key;
-        public string Key
-        {
-            get
-            {
-                return key;
-            }
 
-            set
-            {
-                key = value;
-            }
-        }
+        private List<char> list;
 
         public Caesar(string key)
         {
-            this.Key = key;
+            this.key = key;
         }
 
         public void Set(List<char> list)
         {
-            
+            this.list = list;
         }
 
         public void Crypt()
         {
-            
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list); list[i] = 'A';
+            }
         }
 
         public void Uncrypt()
         {
-            
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = 'B';
+            }
         }
     }
 }
